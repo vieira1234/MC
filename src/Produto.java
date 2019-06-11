@@ -9,15 +9,16 @@ public class Produto extends Pedidos {
 		return preço;
 	}
 
-	public void setPreço(double preço) {
+	public double setPreço(double preço) {
 		this.preço = preço;
+		return preço;
 	}
 	
 	
 	
 //CONSTRUTORES
-	public Produto(ArrayList<Produto> produtos) {
-		super(produtos);
+	public Produto() {
+	
 	}
 	
 	public Produto(ArrayList<Produto> produtos, double preço) {

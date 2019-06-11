@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public abstract class Pedidos {
+public class Pedidos {
 //ATRIBUTOS
 	ArrayList<Produto> produtos = new ArrayList <Produto>();
 //ACESSORES
@@ -32,20 +32,23 @@ public abstract class Pedidos {
 	}
 
 //METODOS
-	public void entregaRestaurante() {
-		System.out.println("Para comer no restaurante");
+	public String entregaRestaurante(String s) {
+		s = "Para comer no restaurante";
+		return s;
 	}
 	
-	public void entregaFora() {
-		System.out.println("Para comer fora do restaurante");
+	public String entregaFora(String s) {
+		s= "Para comer fora do restaurante";
+		return s;
 	}
 	
 	public void add(Produto produto) {
 		produtos.add(produto);
 	}
 
-	public int contar() {	
-		return produtos.size();
+	public int contar(int n) {
+		n = produtos.size();
+		return n;
 	}
 	
 }
