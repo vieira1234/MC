@@ -1,22 +1,22 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import javax.swing.JOptionPane;
 
 import org.junit.jupiter.api.Test;
 
 class NaturaTest {
 
 	@Test
-	void naturaTest() {
-		Natura test = new Natura();
-		String result = test.setPao(JOptionPane.showInputDialog("Insira o tipo de pao"));
-		assertEquals("Normal",result);
+	void naturaConstrutor() {
+		Natura hamburguer = new Natura("BigMac", "normal", "carne vaca", 1, 4);
+		assertEquals(hamburguer.getNome(),"BigMac");
+		assertEquals(hamburguer.getPao(),"normal");
+		assertEquals(hamburguer.getCarne(),"carne vaca");
+		assertEquals(hamburguer.getQuant(),1);
+		assertEquals(hamburguer.getPreço(),4);
+		assertEquals(hamburguer.preço(),4);
+
 	}
 	
-	void naturaTest1() {
-		Natura test = new Natura();
-		String result = test.setCarne(JOptionPane.showInputDialog("Insira o tipo de carne"));
-		assertEquals("Normal",result);
-	}
+	
 	
 }

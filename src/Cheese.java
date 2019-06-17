@@ -1,28 +1,31 @@
-import java.util.ArrayList;
 
 public class Cheese extends Natura {
-//ATRIBUTOS
-	protected String queijo;
-//ACESSORES
-	public String getQueijo() {
-		return queijo;
-	}
+	//ATRIBUTOS
+		protected String queijo;
+	//ACESSORES
+		public String getQueijo() {
+			return queijo;
+		}
 
-	public String setQueijo(String queijo) {
-		this.queijo = queijo;
-		return queijo;
-	}
-//CONSTRUTORES
-	public Cheese(ArrayList<Produto> produtos, double preço) {
-		super(produtos, preço);
+	//CONSTRUTORES
+		public Cheese(String nome, String pao, String carne, int quant, double preço, String queijo) {
+			super(nome, pao, carne, quant, preço);
+			this.queijo = queijo;
+		}
+		
+		public Cheese() {
+			
+		}
+	//METODOS
+
+		
+
+		//toString
+		@Override
+		public String toString() {
+			return "Cheese [nome=" + nome +", queijo=" + queijo + ", pao=" + pao + ", carne=" + carne + ", quant=" + quant + ", preço="
+					+ preço + "]";
+		}
+
 		
 	}
-	
-	public Cheese() {
-		
-	}
-//METODOS
-
-	
-
-}

@@ -1,22 +1,42 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import javax.swing.JOptionPane;
-
 import org.junit.jupiter.api.Test;
 
 class McFlurryTest {
 
 	@Test
-	void mcFlurryTest() {
-		McFlurry test = new McFlurry();
-		int result = test.setQuantidade(1);
-		assertEquals(1,result);
+	// testar o construtor e gets
+	void McFlurryConstrutor() {	
+		McFlurry oreo = new McFlurry("McFlurry", "chocolate", "oreo", 2, 5);
+		
+		assertEquals(oreo.getNome(), "McFlurry");
+		assertEquals(oreo.getSabor(), "chocolate");
+		assertEquals(oreo.getExtra(), "oreo");
+		assertEquals(oreo.getQuant(), 2);
+		assertEquals(oreo.getPreço(), 5);
+	}
+	
+	//Testar preço com topping
+	@Test
+	void McFLurryPreçoTopping() {
+		McFlurry gelado = new McFlurry();
+		gelado.quant = 2;
+		gelado.preço = 5;
+		gelado.extra= "oreo";
+		gelado.sabor= "morango";
+		assertEquals(11,gelado.preço());
+		assertEquals("Comeu um McFlurry com extra " + gelado.getExtra()+ " ,sabor a " +gelado.getSabor()+ " .",gelado.comer());
 	}
 
-	
-	void mcFlurryTest1() {
-		McFlurry test = new McFlurry();
-		String result = test.setSabor(JOptionPane.showInputDialog("Insira o sabor"));
-		assertEquals("Framboesa",result);
+	@Test
+	void McFLurryPreçoSemTopping() {
+		McFlurry gelado = new McFlurry();
+		gelado.quant = 2;
+		gelado.preço = 5;
+		gelado.extra= null;
+		gelado.sabor= "morango";
+		assertEquals(10,gelado.preço());
+		assertEquals("Comeu um McFlurry com sabor a "+gelado.getSabor()+" .",gelado.comer());
 	}
+
 }

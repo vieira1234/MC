@@ -1,13 +1,27 @@
-import java.util.ArrayList;
 
-public class Sobremesa extends Produto {
+
+public abstract class Sobremesa extends Produto {
 	//ATRIBUTOS
-	protected Sundae sundae;
-	protected McFlurry mcflurry;
+	protected String sabor;
+	
 	//ACESSORES
-	//CONSTRUTORES
-	public Sobremesa(ArrayList<Produto> produtos, double preço) {
-		super(produtos, preço);
+	public String getSabor() {
+		return sabor;
 	}
+
+	
+	//CONSTRUTORES
+	public Sobremesa(String nome, String sabor, int quant, double preço) {
+		super(nome, quant, preço);
+		this.sabor = sabor;
+	}
+
+	public  Sobremesa() {
+		super();
+	};
+	
 	//METODOS
+	
+	public abstract String comer();
+
 }

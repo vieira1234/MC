@@ -6,10 +6,13 @@ import org.junit.jupiter.api.Test;
 class ProdutoTest {
 
 	@Test
-	void produtoTest() {
-		Produto test = new Produto();
-		Double result = test.setPreço(1.3);
-		assertNotEquals("1.3",result);
+	void produtoConstrutor() {
+		Produto produto = new Produto("Salada", 5, 3.5);
+		assertEquals(produto.getNome(),"Salada");
+		assertEquals(produto.getQuant(),5);
+		assertEquals(produto.getPreço(),3.5);
+		assertEquals(produto.preço(),17.5);
+
 	}
 
 }
